@@ -9,7 +9,7 @@ import testBase.BaseClass;
 
 public class TC01_RegistrationTest extends BaseClass {
 	
-	@Test
+	@Test(groups = {"Sanity","Master"})
 	public void verify_acc_registration()
 	{
 		

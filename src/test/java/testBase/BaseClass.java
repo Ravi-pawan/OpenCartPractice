@@ -1,13 +1,18 @@
 package testBase;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.Properties;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -18,11 +23,11 @@ import org.testng.annotations.Parameters;
 
 public class BaseClass {
 
-	public WebDriver driver;
+	public static WebDriver driver;
 	public Logger logger;
 	public Properties prop;
 	
-	@BeforeClass
+	@BeforeClass(groups = {"Sanity","Regression","Master","DataDriven"})
 	@Parameters({"os","browser"})
 	public void setUp(String os,String browser) throws IOException
 	{
@@ -30,7 +35,6 @@ public class BaseClass {
 		prop=new Properties();
 		prop.load(file);
 		logger=LogManager.getLogger(this.getClass());
-		driver=new ChromeDriver();
 		switch(browser.toLowerCase())
 		{
 		case "chrome":driver=new ChromeDriver();break;
@@ -45,7 +49,7 @@ public class BaseClass {
 		
 	}
 	
-	@AfterClass
+	@AfterClass(groups = {"Sanity","Regression","Master","DataDriven"})
 	public void tearDown()
 	{
 		driver.quit();
@@ -68,5 +72,17 @@ public class BaseClass {
 		String rA=RandomStringUtils.randomAlphabetic(2);
 		String rN=RandomStringUtils.randomNumeric(6);
 		return rA+"@"+rN;
+	}
+	
+	
+	public String captureScreen(String tname)
+	{
+		String timeStamp=new SimpleDateFormat("yyyy.MM.dd.hhmmss").format(new Date());
+		TakesScreenshot ts=(TakesScreenshot)driver;
+		File source=ts.getScreenshotAs(OutputType.FILE);
+		String targetFilePath=System.getProperty("user.dir")+"\\Ss\\"+tname+" "+timeStamp+".png";
+		File targetfile=new File(targetFilePath);
+		source.renameTo(targetfile);
+		return targetFilePath;
 	}
 }

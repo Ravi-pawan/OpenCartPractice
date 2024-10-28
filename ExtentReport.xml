@@ -8,9 +8,8 @@
  <parameter name="os" value="windows"/>
   <parameter name="browser" value="edge"/>
     <classes>
-     <!-- <class name="testCases.TC01_RegistrationTest"/> -->
-     <!--  <class name="testCases.TC02_LoginPageTest"/> -->
-      <class name="testCases.TC02_LoginTestDDT"/>
+      <class name="testCases.TC01_RegistrationTest"/> 
+      <class name="testCases.TC02_LoginPageTest"/> 
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
