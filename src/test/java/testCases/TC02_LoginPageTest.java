@@ -28,19 +28,8 @@ public class TC02_LoginPageTest extends BaseClass{
 		
 		logger.info("Validating pageTest");
 		MyAccountPage mp=new MyAccountPage(driver);
-		boolean ret=mp.verifyLogin();
-		if(ret==true)
-		{
-			mp.clickLogout();
-			Assert.assertTrue(true);
-		}
-		else
-		{
-			logger.error("test failed");
-			logger.debug("test debug");
-			Assert.fail();
-		}
-		
+		boolean msg=mp.verifyLogin();
+		Assert.assertEquals(msg, true);
 		logger.info("****TC02_LoginTest finished....****");
 	}
 }

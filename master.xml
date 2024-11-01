@@ -5,12 +5,12 @@
                 <listener class-name="utilities.ExtentReportManager"/>
        </listeners>
   <test thread-count="5" name="Test">
- <parameter name="os" value="windows"/>
-  <parameter name="browser" value="edge"/>
+ <parameter name="os" value="linux"/>
+  <parameter name="browser" value="chrome"/>
     <classes>
-     <!-- <class name="testCases.TC01_RegistrationTest"/> -->
-     <!--  <class name="testCases.TC02_LoginPageTest"/> -->
-      <class name="testCases.TC02_LoginTestDDT"/>
+   <!--   <class name="testCases.TC01_RegistrationTest"/> -->
+    <class name="testCases.TC02_LoginPageTest"/> 
+     <!-- <class name="testCases.TC02_LoginTestDDT"/> -->
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

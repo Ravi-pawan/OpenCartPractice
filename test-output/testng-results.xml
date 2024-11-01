@@ -1,81 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="3" failed="2" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-28T07:11:10 IST" name="Suite" finished-at="2024-10-28T07:11:48 IST" duration-ms="37481">
+  <suite started-at="2024-11-01T08:59:10 IST" name="Suite" finished-at="2024-11-01T08:59:16 IST" duration-ms="5930">
     <groups>
-      <group name="DataDriven">
-        <method signature="TC02_LoginTestDDT.verify_LoginAccount(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.TC02_LoginTestDDT@21a21c64]" name="verify_LoginAccount" class="testCases.TC02_LoginTestDDT"/>
-      </group> <!-- DataDriven -->
+      <group name="Master">
+        <method signature="TC02_LoginPageTest.verify_LoginAccount()[pri:0, instance:testCases.TC02_LoginPageTest@62ef27a8]" name="verify_LoginAccount" class="testCases.TC02_LoginPageTest"/>
+      </group> <!-- Master -->
+      <group name="Regression">
+        <method signature="TC02_LoginPageTest.verify_LoginAccount()[pri:0, instance:testCases.TC02_LoginPageTest@62ef27a8]" name="verify_LoginAccount" class="testCases.TC02_LoginPageTest"/>
+      </group> <!-- Regression -->
     </groups>
-    <test started-at="2024-10-28T07:11:10 IST" name="Test" finished-at="2024-10-28T07:11:48 IST" duration-ms="37481">
-      <class name="testCases.TC02_LoginTestDDT">
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC02_LoginTestDDT@21a21c64]" started-at="2024-10-28T07:11:11 IST" name="setUp" finished-at="2024-10-28T07:11:18 IST" duration-ms="7730" status="PASS">
+    <test started-at="2024-11-01T08:59:10 IST" name="Test" finished-at="2024-11-01T08:59:16 IST" duration-ms="5930">
+      <class name="testCases.TC02_LoginPageTest">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC02_LoginPageTest@62ef27a8]" started-at="2024-11-01T08:59:10 IST" name="setUp" finished-at="2024-11-01T08:59:14 IST" duration-ms="4245" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[windows]]>
+                <![CDATA[linux]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[edge]]>
+                <![CDATA[chrome]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verify_LoginAccount(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.TC02_LoginTestDDT@21a21c64]" started-at="2024-10-28T07:11:21 IST" name="verify_LoginAccount" data-provider="LoginData" finished-at="2024-10-28T07:11:23 IST" duration-ms="2688" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[EcPoK@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[EjW@544]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[valid]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verify_LoginAccount -->
-        <test-method signature="verify_LoginAccount(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.TC02_LoginTestDDT@21a21c64]" started-at="2024-10-28T07:11:24 IST" name="verify_LoginAccount" data-provider="LoginData" finished-at="2024-10-28T07:11:26 IST" duration-ms="2037" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[YvnBm@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[sdu@494]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[invalid]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
+        <test-method signature="verify_LoginAccount()[pri:0, instance:testCases.TC02_LoginPageTest@62ef27a8]" started-at="2024-11-01T08:59:14 IST" name="verify_LoginAccount" finished-at="2024-11-01T08:59:15 IST" duration-ms="396" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[expected [true] but found [false]]]>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//span[normalize-space()='My Account']"}
+  (Session info: chrome=130.0.6723.69)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [692fb9177bd71c63d9cc5c9fd67b91e4, findElement {value=//span[normalize-space()='My Account'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.69, chrome: {chromedriverVersion: 130.0.6723.69 (3ec172b971b9..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43243}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://172.19.0.3:4444/sessio..., se:cdpVersion: 130.0.6723.69, se:containerName: , se:noVncPort: 7900, se:vnc: ws://172.19.0.3:4444/sessio..., se:vncEnabled: true, se:vncLocalAddress: ws://172.19.0.3:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 692fb9177bd71c63d9cc5c9fd67b91e4]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertTrue(Assert.java:57)
-at org.testng.Assert.assertTrue(Assert.java:67)
-at testCases.TC02_LoginTestDDT.verify_LoginAccount(TC02_LoginTestDDT.java:53)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[normalize-space()='My Account']"}
+  (Session info: chrome=130.0.6723.69)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [692fb9177bd71c63d9cc5c9fd67b91e4, findElement {value=//span[normalize-space()='My Account'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.69, chrome: {chromedriverVersion: 130.0.6723.69 (3ec172b971b9..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43243}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://172.19.0.3:4444/sessio..., se:cdpVersion: 130.0.6723.69, se:containerName: , se:noVncPort: 7900, se:vnc: ws://172.19.0.3:4444/sessio..., se:vncEnabled: true, se:vncLocalAddress: ws://172.19.0.3:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 692fb9177bd71c63d9cc5c9fd67b91e4
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:53)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy30.click(Unknown Source)
+at pageObjects.HomePage.clickMyaccount(HomePage.java:18)
+at testCases.TC02_LoginPageTest.verify_LoginAccount(TC02_LoginPageTest.java:19)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -104,118 +98,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_LoginAccount -->
-        <test-method signature="verify_LoginAccount(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.TC02_LoginTestDDT@21a21c64]" started-at="2024-10-28T07:11:26 IST" name="verify_LoginAccount" data-provider="LoginData" finished-at="2024-10-28T07:11:28 IST" duration-ms="2195" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[laksh@yahoo.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Lakshmi]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[invalid]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertTrue(Assert.java:57)
-at org.testng.Assert.assertTrue(Assert.java:67)
-at testCases.TC02_LoginTestDDT.verify_LoginAccount(TC02_LoginTestDDT.java:53)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:739)
-at org.testng.TestRunner.run(TestRunner.java:614)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verify_LoginAccount -->
-        <test-method signature="verify_LoginAccount(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.TC02_LoginTestDDT@21a21c64]" started-at="2024-10-28T07:11:28 IST" name="verify_LoginAccount" data-provider="LoginData" finished-at="2024-10-28T07:11:40 IST" duration-ms="11676" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[laks@yahoo.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[xyz]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[invalid]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verify_LoginAccount -->
-        <test-method signature="verify_LoginAccount(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.TC02_LoginTestDDT@21a21c64]" started-at="2024-10-28T07:11:40 IST" name="verify_LoginAccount" data-provider="LoginData" finished-at="2024-10-28T07:11:46 IST" duration-ms="6003" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[abc123@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[test@123]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[valid]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verify_LoginAccount -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC02_LoginTestDDT@21a21c64]" started-at="2024-10-28T07:11:46 IST" name="tearDown" finished-at="2024-10-28T07:11:48 IST" duration-ms="1843" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC02_LoginPageTest@62ef27a8]" started-at="2024-11-01T08:59:15 IST" name="tearDown" finished-at="2024-11-01T08:59:16 IST" duration-ms="200" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testCases.TC02_LoginTestDDT -->
+      </class> <!-- testCases.TC02_LoginPageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
